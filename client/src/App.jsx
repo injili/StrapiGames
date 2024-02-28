@@ -4,7 +4,6 @@ import {
   createBrowserRouter,
   Outlet,
 } from "react-router-dom";
-import './App.css';
 import { Home } from "./pages/Home";
 import { Product } from "./pages/Product";
 import { Products } from "./pages/Products";
@@ -12,7 +11,7 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 const Layout = () => {
   return (
-    <div>
+    <div className="font-jost">
       <Navbar/>
       <Outlet/>
       <Footer/>
