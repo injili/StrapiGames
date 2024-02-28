@@ -1,22 +1,26 @@
 import {
   BrowserRouter,
   RouterProvider,
-  createBrowserRouter
+  createBrowserRouter,
+  Outlet,
 } from "react-router-dom";
 import './App.css';
+import { Home } from "./pages/Home";
+import { Product } from "./pages/Product";
+import { Products } from "./pages/Products";
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<span>Home</span>
+    element:<span><Home/></span>
   },
   {
     path:'/products/:id',
-    element:<span>Category</span>
+    element:<span><Products/></span>
   },
   {
     path:'/product/:id',
-    element:<span>Product</span>
+    element:<span><Product/></span>
   },
 ])
 
