@@ -30,7 +30,7 @@ export const Navbar = () => {
               </ul>
             </div>
             <ul className='flex space-x-4 mx-4'>
-              <li><Link to='/cart' className="text-amber-400 sm:text-xl text-2xl hover:text-gray-300"><FaShoppingCart /></Link></li>
+              <li className="text-amber-300 sm:text-xl text-2xl hover:text-gray-300 flex gap-1"><FaShoppingCart /><span>0</span></li>
             </ul>
           
           </div>
