@@ -1,8 +1,15 @@
 import React from 'react';
 import { Checkbox, Label, Radio } from 'flowbite-react';
+import { useParams } from 'react-router-dom';
+import { List } from '../components/List';
+import { useState } from 'react';
 
 
 export const Products = () => {
+  const catId = parseInt(useParams().id);
+  const [maxPrice,setMaxPrice] = useState(120000);
+  const [sort, setSort] = useState(null);
+
   return (
     <section>
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -107,6 +114,7 @@ export const Products = () => {
                                             id="FilterPriceFrom"
                                             placeholder="From"
                                             className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                                            min={0}
                                         />
                                         </label>
 
@@ -118,6 +126,8 @@ export const Products = () => {
                                             id="FilterPriceTo"
                                             placeholder="To"
                                             className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                                            onChange={(e)=>setMaxPrice(e.target.value)}
+                                            min={0}
                                         />
                                         </label>
                                     </div>
@@ -156,11 +166,11 @@ export const Products = () => {
                                     </header>
                                     <fieldset className="border-t flex max-w-md flex-col gap-4 p-4">
                                       <div className="flex items-center gap-2">
-                                        <Radio id="united-state" name="countries" value="USA" defaultChecked />
+                                        <Radio id="united-state" name="countries"  defaultChecked onChange={e=>setSort('asc')}/>
                                         <Label htmlFor="united-state">Price (Lowest First.)</Label>
                                       </div>
                                       <div className="flex items-center gap-2">
-                                        <Radio id="germany" name="countries" value="Germany" />
+                                        <Radio id="germany" name="countries" onChange={e=>setSort('desc')}/>
                                         <Label htmlFor="germany">Price (Highest First.)</Label>
                                       </div>
                                     </fieldset>
@@ -171,7 +181,8 @@ export const Products = () => {
                         </div>
 
                         <div className="lg:col-span-3">
-                            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+                                <List catId={catId} maxPrice={maxPrice} sort={sort}/>
                             </div>
                         </div>
                     </div>

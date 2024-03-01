@@ -1,4 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Card } from './Card';
+import bed1 from '../assets/img/bed1.jpg';
+import coffee1 from '../assets/img/coffee1.jpg';
+import dining1 from '../assets/img/dining1.jpg';
+import sofa1 from '../assets/img/sofa1.jpg';
+import bed2 from '../assets/img/bed2.jpg';
+import coffee2 from '../assets/img/coffee2.jpg';
+import dining2 from '../assets/img/dining2.jpg';
+import sofa2 from '../assets/img/sofa2.jpg';
 
 export const List = () => {
     const data = [
@@ -38,8 +47,12 @@ export const List = () => {
             oldPrice: 60000,
             price: 54000,
         },
-    ]
+    ];
     return (
-        <div>List</div>
+        <div>
+            {data?.map(item=>(
+            <Card item={item} key={item.id}/>
+        ))}
+        </div>
     )
 }
