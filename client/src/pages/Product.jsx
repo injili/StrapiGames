@@ -1,13 +1,46 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import img1 from '../assets/img/bed2.jpg';
+import img2 from '../assets/img/coffee2.jpg';
+import img3 from '../assets/img/dining2.jpg';
 
 export const Product = () => {
-  const[quantity,setQuantity] = useState(1);
+  const [selectedImg,setSelectedImg] = useState(0);
+  const [quantity,setQuantity] = useState(1);
+  const images = [
+    img1,
+    img2,
+    img3
+  ];
   return (
             <section className="text-gray-700 body-font overflow-hidden bg-white">
                 <div className="px-4 py-8 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                    <img alt={props.name} className="lg:w-1/2 w-full object-cover object-center rounded-lg border border-gray-200" src={product.image} />
+                    {/* <img alt={props.name} className="lg:w-1/2 w-full object-cover object-center rounded-lg border border-gray-200" src={product.image} /> */}
+                        <div class="lg:col-span-3 lg:row-end-1">
+                            <div class="lg:flex lg:items-start">
+                            <div class="lg:order-2">
+                                <div class="max-w-xl overflow-hidden rounded-lg">
+                                <img class="h-full w-full max-w-full object-cover" src={images[selectedImg]} alt="" />
+                                </div>
+                            </div>
+
+                            <div class="mt-4 lg:mt-0 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
+                                <div class="flex flex-row items-start lg:flex-col gap-4">
+                                <button type="button" class="flex-0 aspect-square h-20 overflow-hidden rounded-lg active:border-2 active:border-gray-900">
+                                    <img class="h-full w-full object-cover" src={images[0]} onClick={e=>setSelectedImg(0)} alt="" />
+                                </button>
+                                <button type="button" class="flex-0 aspect-square h-20 overflow-hidden rounded-lg active:border-2 active:border-gray-900">
+                                    <img class="h-full w-full object-cover" src={images[1]} onClick={e=>setSelectedImg(1)} alt="" />
+                                </button>
+                                <button type="button" class="flex-0 aspect-square h-20 overflow-hidden rounded-lg active:border-2 active:border-gray-900">
+                                    <img class="h-full w-full object-cover" src={images[2]} onClick={e=>setSelectedImg(2)} alt="" />
+                                </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                         <nav aria-label="Breadcrumb" className="my-8">
                             <ol className="flex items-center gap-1 text-sm text-gray-600">
@@ -67,12 +100,12 @@ export const Product = () => {
                                 </li>
 
                                 <li>
-                                <a href="#" className="block transition hover:text-gray-700"> {product.name} </a>
+                                <a href="#" className="block transition hover:text-gray-700"> {/*product.name*/} </a>
                                 </li>
                             </ol>
                         </nav>
                         <h2 className="text-sm title-font text-gray-500 tracking-widest">PRODUCT DESCRIPTION</h2>
-                        <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{product.name}</h1>
+                        <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{/*product.name*/}</h1>
                         <div className="flex mb-4">
                         <span className="flex items-center">
                             <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-amber-500" viewBox="0 0 24 24">
@@ -105,7 +138,7 @@ export const Product = () => {
                             </a>
                         </span>
                         </div>
-                        <p className="leading-relaxed">{product.description}</p>
+                        <p className="leading-relaxed">{/*product.description*/}</p>
                         <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
                         <div className="flex ml-6 items-center">
                             <div className="relative">
@@ -133,13 +166,13 @@ export const Product = () => {
                             />
 
                             <button type="button" class="size-10 leading-10 text-gray-600 transition hover:opacity-75" onClick={()=>setQuantity((prev) => prev+1)}>
-                              &plus;
+                              +
                             </button>
                           </div>
                         </div>
                         <div className="flex">
-                        <span className="title-font font-medium text-2xl text-gray-900">Ksh. {product.new_price}.00</span>
-                        <button className="flex ml-auto text-white bg-amber-500 border-0 py-2 px-6 focus:outline-none hover:bg-amber-600 rounded-lg">Add To Cart</button>
+                        <span className="title-font font-medium text-2xl my-4 text-gray-900">Ksh. {/*product.new_price*/}.00</span>
+                        <button className="flex my-4 ml-auto text-white bg-amber-400 border-0 py-2 px-6 focus:outline-none hover:bg-amber-500 rounded-lg">Add To Cart</button>
                         </div>
                     </div>
                     </div>

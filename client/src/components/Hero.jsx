@@ -5,8 +5,8 @@ import hero2 from '../assets/img/hero2.jpg';
 import hero3 from '../assets/img/hero3.jpg';
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
-import { useEffect } from 'react';
 import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 export const Hero = () => {

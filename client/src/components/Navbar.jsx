@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Label, TextInput } from 'flowbite-react';
 import { IoIosSearch, IoMdMailOpen } from "react-icons/io";
 import { FaFacebook, FaWhatsapp, FaInstagram, FaShoppingCart, FaPhone } from "react-icons/fa";
 import { MdMenuOpen } from "react-icons/md";
 import { Link } from 'react-router-dom';
-
-
+import { Cart } from './Cart';
 
 export const Navbar = () => {
+  const [open,setOpen] = useState(false);
+
   return (
       <div className='sticky top-0 relative z-40 py-4 sm:py-4 md:py-4 lg:py-8 xl:py-8 2xl-8 mx-8'>
         <nav className="bg-zinc-950 py-4 rounded-lg">
@@ -30,11 +31,12 @@ export const Navbar = () => {
               </ul>
             </div>
             <ul className='flex space-x-4 mx-4'>
-              <li className="text-amber-300 sm:text-xl text-2xl hover:text-gray-300 flex gap-1"><FaShoppingCart /><span>0</span></li>
+              <li className="text-amber-400 sm:text-xl text-2xl hover:text-gray-300 flex gap-1" onClick={()=>setOpen(!open)}><FaShoppingCart /><span>0</span></li>
             </ul>
           
           </div>
         </nav>
+      {open && <Cart/>}
       </div>
   )
 }

@@ -14,7 +14,7 @@ export const Footer = () => {
             <div class="px-4 py-4 sm:py-4 sm:px-4 md:px-6 md:py-6 lg:px-8 lg:py-8">
                 <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
                 <div>
-                    <div class="flex justify-left text-5xl text-amber-300 lg:justify-left">
+                    <div class="flex justify-left text-5xl text-amber-400 lg:justify-left">
                       <Link to='/'><span className='text-3xl text-slate-100'>Logo</span></Link>
                         {/* <Link to={'/'}><img className='h-12' src={bigLogo} /></Link> */}
                     </div>
@@ -30,7 +30,7 @@ export const Footer = () => {
                         href="#"
                         rel="noreferrer"
                         target="_blank"
-                        class="text-amber-300 transition hover:text-amber-300/75"
+                        class="text-amber-400 transition hover:text-amber-400/75"
                         >
                         <span class="sr-only">Facebook</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -48,7 +48,7 @@ export const Footer = () => {
                         href="#"
                         rel="noreferrer"
                         target="_blank"
-                        class="text-amber-300 transition hover:text-amber-300/75"
+                        class="text-amber-400 transition hover:text-amber-400/75"
                         >
                         <span class="sr-only">Instagram</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -66,7 +66,7 @@ export const Footer = () => {
                         href="#"
                         rel="noreferrer"
                         target="_blank"
-                        class="text-amber-300 transition hover:text-amber-300/75"
+                        class="text-amber-400 transition hover:text-amber-400/75"
                         >
                         <span class="sr-only">Twitter</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -83,7 +83,7 @@ export const Footer = () => {
                 <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
 
                     <div class="text-center sm:text-left">
-                    <p class="text-lg font-medium text-amber-300">Our Products</p>
+                    <p class="text-lg font-medium text-amber-400">Our Products</p>
 
                     <ul class="mt-8 space-y-4 text-sm">
                         <li>
@@ -107,7 +107,7 @@ export const Footer = () => {
                     </div>
 
                     <div class="text-center sm:text-left">
-                    <p class="text-lg font-medium text-amber-300">Helpful Links</p>
+                    <p class="text-lg font-medium text-amber-400">Helpful Links</p>
 
                     <ul class="mt-8 space-y-4 text-sm">
                         <li>
@@ -122,7 +122,7 @@ export const Footer = () => {
                     </div>
 
                     <div class="text-center sm:text-left">
-                    <p class="text-lg font-medium text-amber-300">Contact Us</p>
+                    <p class="text-lg font-medium text-amber-400">Contact Us</p>
 
                     <ul class="mt-8 space-y-4 text-sm">
                         <li>
@@ -132,7 +132,7 @@ export const Footer = () => {
                         >
                             <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="size-5 shrink-0 text-amber-300"
+                            class="size-5 shrink-0 text-amber-400"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -156,7 +156,7 @@ export const Footer = () => {
                         >
                             <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="size-5 shrink-0 text-amber-300"
+                            class="size-5 shrink-0 text-amber-400"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -178,7 +178,7 @@ export const Footer = () => {
                         >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="size-5 shrink-0 text-amber-300"
+                            class="size-5 shrink-0 text-amber-400"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -212,7 +212,7 @@ export const Footer = () => {
                     <span class="block sm:inline">All rights reserved.</span>
 
                     <a
-                        class="inline-block text-amber-300 underline transition hover:text-amber-300/75"
+                        class="inline-block text-amber-400 underline transition hover:text-amber-400/75"
                         href="#"
                     >
                         Terms & Conditions
@@ -221,7 +221,7 @@ export const Footer = () => {
                     <span>&middot;</span>
 
                     <a
-                        class="inline-block text-amber-300 underline transition hover:text-amber-300/75"
+                        class="inline-block text-amber-400 underline transition hover:text-amber-400/75"
                         href="#"
                     >
                         Privacy Policy

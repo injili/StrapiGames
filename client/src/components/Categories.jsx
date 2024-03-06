@@ -16,7 +16,7 @@ export const Categories = () => {
     }, []);
     return (
         <section>
-            <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+            <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 sm:py-8 lg:px-0">
                 <header className="text-center">
                     <h2 className="font-extralight font-raleway text-gray-900 text-5xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl" data-aos='fade-up'>Shop By Category</h2>
                     <p className="mx-4 mt-4 text-gray-500">
