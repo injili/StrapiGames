@@ -6,7 +6,7 @@ export const Card = ({item}) => {
         <div className="group block overflow-hidden">
             {/* <Link to={`/product/${item.id}`} >{item.isNew && <span class="whitespace-nowrap rounded-lg bg-rose-100 px-2.5 py-0.5 text-sm text-rose-700">New</span>}<img */}
             <Link to={`/product/${item.id}`}><img
-                src={item.img}
+                src={'http://localhost:1337' + item.attributes.img.data.attributes.url}
                 alt=""
                 className="h-72 rounded-lg w-full object-cover transition duration-500 group-hover:scale-105"
             /></Link>
@@ -16,11 +16,11 @@ export const Card = ({item}) => {
                     className="group-hover:text-amber-500"
                 >
                     <strong>
-                        {item.title}
+                        {item?.attributes.title}
                     </strong>
                 </h3>
                 <p className="pt-2">
-                    <span className="tracking-wider"> Ksh. {item.price}.00</span>
+                    <span className="tracking-wider"> Ksh. {item?.attributes.price}.00</span>
                 </p>
             </div>
         </div>

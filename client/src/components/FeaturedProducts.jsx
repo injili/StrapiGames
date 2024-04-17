@@ -1,58 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Card } from './Card';
 import Aos from 'aos';
 import { useEffect } from 'react';
 import 'aos/dist/aos.css';
-import bed1 from '../assets/img/bed1.jpg';
-import coffee1 from '../assets/img/coffee1.jpg';
-import dining1 from '../assets/img/dining1.jpg';
-import sofa1 from '../assets/img/sofa1.jpg';
-import bed2 from '../assets/img/bed2.jpg';
-import coffee2 from '../assets/img/coffee2.jpg';
-import dining2 from '../assets/img/dining2.jpg';
-import sofa2 from '../assets/img/sofa2.jpg';
-
 
 
 export const FeaturedProducts = ({type}) => {  
-    const data = [
-        {
-            id: 1,
-            img: bed1,
-            img2: bed2,
-            title: 'The Bed 1',
-            isNew: true,
-            oldPrice: 59000,
-            price: 42000,
-        },
-        {
-            id: 2,
-            img: coffee1,
-            img2: coffee2,
-            title: 'The Coffee 1',
-            isNew: true,
-            oldPrice: 9000,
-            price: 7900,
-        },
-        {
-            id: 3,
-            img: dining1,
-            img2: dining2,
-            title: 'The Dining 1',
-            isNew: true,
-            oldPrice: 75000,
-            price: 67000,
-        },
-        {
-            id: 4,
-            img: sofa1,
-            img2: sofa2,
-            title: 'The Sofa 1',
-            isNew: true,
-            oldPrice: 60000,
-            price: 54000,
-        },
-    ]  
+    const [data, setData] = useState([])
+    console.log(import.meta.env.REACT_APP_API_TOKEN)
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(
+                    "http://localhost:1337/api/products?populate=*",
+                    {
+                        headers: {
+                            Authorization: "bearer fac012c205098c632519be8742c7450fb7579892d2f0bea5d5e02847be5ff22a1608972cb544b660b7f2c90f4c2e56aa107035f6abea7b6998802d1c8c1b9d182904833b164f3cecc5832b7122745b1a9ea5c2f66dbc4c59514a2d0c0ed6ec7e1dab02179f291d7604dfd821877f0dbf5df75789f4344b375c1249cf12ab30f6",
+                        },
+                    }
+                );
+                console.log("API Response:", res.data);
+                setData(res.data.data)
+            } catch (err) {
+                console.log(err);
+            }
+        };
+        fetchData();
+    }, []);
+
     useEffect(()=>{
         Aos.init({
             duration: 2000,
